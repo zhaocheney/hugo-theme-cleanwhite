@@ -29,10 +29,10 @@
             {{ end }}
         {{ end }}
     {{ else }}
-        Posted by {{ with .Params.author }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }} on {{ .Date.Format "2006-01-02 15:04:05" }}
+        <i class="bi bi-vector-pen"></i> {{ .Date.Format "2006-01-02 15:04:05" }}
         <!-- Don't show "Last Modified on" if update happened on the same day. -->
         {{ if (and (not .Lastmod.IsZero) (not (eq (dateFormat "2006-01-02 15:04:05" .Lastmod) (dateFormat "2006-01-02 15:04:05" .Date)))) }}
-            <br>Last Modified on {{ dateFormat "2006-01-02 15:04:05" .Params.LastMod }}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-stopwatch"></i> {{ dateFormat "2006-01-02 15:04:05" .Params.LastMod }}
         {{ end }}
     {{ end }}
     </p>
