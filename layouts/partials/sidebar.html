@@ -206,23 +206,12 @@
             </div>
     </section>
 	{{ end }}
-    <!-- Bookmarks -->
-    {{ if .Site.Params.bookmarks }}
-    <section>
-        <hr>
-        <h5>QUICK LINKS</h5>
-        <ul class="list-inline">
-            {{ range .Site.Params.bookmark_link }}
-            <li><a target="_blank" href="{{.href }}">{{.title}}</a></li>
-            {{ end }}
-        </ul>
-    </section>
-    {{ end }}
+
     <!-- Featured Tags -->
     {{ if .Site.Params.featured_tags }}
     <section>
         <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
+        <h5>标签</h5>
         <div class="tags">
             {{ $featured_condition_size := .Site.Params.featured_condition_size }}
             {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
@@ -236,11 +225,24 @@
     </section>
     {{ end }}
 
+    <!-- Bookmarks -->
+    {{ if .Site.Params.bookmarks }}
+    <section>
+        <hr>
+        <h5>书签</h5>
+        <ul class="list-inline">
+            {{ range .Site.Params.bookmark_link }}
+            <li><a target="_blank" href="{{.href }}">{{.title}}</a></li>
+            {{ end }}
+        </ul>
+    </section>
+    {{ end }}
+
     <!-- Friends Blog -->
     {{ if .Site.Params.friends }}
     <section>
         <hr class="hidden-sm hidden-xs">
-        <h5>FRIENDS</h5>
+        <h5>友情链接</h5>
         <ul class="list-inline">
             {{ range .Site.Params.friend_link }}
             <li><a target="_blank" href="{{.href}}">{{.title}}</a></li>
@@ -248,6 +250,8 @@
         </ul>
     </section>
     {{ end }}
+
+    <!-- Publications -->
     {{ if .Site.Params.publications }}
     <section>
         <hr class="hidden-sm hidden-xs">
