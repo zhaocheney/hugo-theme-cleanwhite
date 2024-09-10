@@ -1,4 +1,3 @@
-
 <div class="entry-shang text-center">
     {{ if .Site.Params.reward_guide }}
 	    <p> 「{{ .Site.Params.reward_guide }}」</p>
@@ -11,7 +10,11 @@
 <div class="zs-modal-box">
 	<div class="zs-modal-head">
 		<button type="button" class="close">×</button>
-		<span class="author"><a href="{{ .Site.BaseURL }}"><img src="{{ "img/favicon.ico" | relURL}}" />{{ .Site.Title }}</a></span>
+		<span class="author">
+			<a href="{{ .Site.BaseURL }}">
+				<img style="display: inline-block; margin: 0 5px 3px 1px" src="{{ "img/favicon.ico" | relURL}}" />{{ .Site.Title }}
+			</a>
+		</span>
         {{ if .Site.Params.reward_guide }}
 	        <p class="tip"><i></i><span>{{ .Site.Params.reward_guide }}</span></p>
 		{{ else }}
@@ -37,9 +40,19 @@
 		</div>
 	</div>
 	<div class="zs-modal-footer">
-		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span><span class="zs-wechat"><img src="{{ "img/reward/wechat-btn.png" | relURL }}"/></span></label>
+		<label>
+			<input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked">
+			<span class="zs-wechat">
+				<img style="display: inline-block; margin: 5px" src="{{ "img/reward/wechat-btn.png" | relURL }}"/>
+			</span>
+		</label>
 		<!--
-		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="{{ "img/reward/alipay-btn.png" | relURL }}"/></span></label>
+		<label>
+			<input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay">
+			<span>
+				<img style="display: inline-block; margin: 5px" src="{{ "img/reward/alipay-btn.png" | relURL }}"/>
+			</span>
+		</label>
 		-->
 	</div>
 </div>
